@@ -3,8 +3,6 @@ package com.book.demo.dto;
 import com.book.demo.entity.BookDetailsEntity;
 
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BookDetailsDTO {
     private String bookName;
@@ -13,9 +11,10 @@ public class BookDetailsDTO {
     private double bookPrice;
     private String imagePath;
 
-    public BookDetailsDTO(){
+    public BookDetailsDTO() {
 
     }
+
     public BookDetailsDTO(String bookName, String bookDesc, double bookPrice, String imagePath) {
         this.bookName = bookName;
         this.bookDesc = bookDesc;
@@ -55,7 +54,7 @@ public class BookDetailsDTO {
         return imagePath;
     }
 
-    public BookDetailsEntity toEntity (){
+    public BookDetailsEntity toEntity() {
         BookDetailsEntity bookEntity = new BookDetailsEntity();
         bookEntity.setBookName(this.bookName);
         bookEntity.setBookDesc(this.bookDesc);
@@ -64,18 +63,18 @@ public class BookDetailsDTO {
         return bookEntity;
     }
 
-//    public static List<BookDetailsDTO> fromEntity(List<BookDetailsEntity> entityList) {
-//        List<BookDetailsDTO> listBookDTO = new ArrayList<>();
-//        entityList.stream().forEach(s -> {
-//            BookDetailsDTO bookDTO = new BookDetailsDTO();
-//            bookDTO.setBookName(s.getBookName());
-//            bookDTO.setBookDesc(s.getBookDesc());
-//            listBookDTO.add(bookDTO);
-//        });
-//        return listBookDTO;
-//    }
+    /* public static List<BookDetailsDTO> fromEntity(List<BookDetailsEntity> entityList) {
+        List<BookDetailsDTO> listBookDTO = new ArrayList<>();
+        entityList.stream().forEach(s -> {
+            BookDetailsDTO bookDTO = new BookDetailsDTO();
+            bookDTO.setBookName(s.getBookName());
+            bookDTO.setBookDesc(s.getBookDesc());
+            listBookDTO.add(bookDTO);
+        });
+        return listBookDTO;
+    } */
 
-    public static BookDetailsDTO singleEntityConversion (BookDetailsEntity singleEntity){
+    public static BookDetailsDTO singleEntityConversion(BookDetailsEntity singleEntity) {
         BookDetailsDTO singleDTO = new BookDetailsDTO();
         singleDTO.setBookName(singleEntity.getBookName());
         singleDTO.setBookDesc(singleEntity.getBookDesc());

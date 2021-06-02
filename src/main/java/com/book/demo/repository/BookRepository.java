@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BookRepository extends JpaRepository<BookDetailsEntity,Long> {
+public interface BookRepository extends JpaRepository<BookDetailsEntity, Long> {
 
     List<BookDetailsEntity> findAll();
 
