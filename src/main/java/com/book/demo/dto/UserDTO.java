@@ -2,9 +2,14 @@ package com.book.demo.dto;
 
 import com.book.demo.entity.UserEntity;
 
+import javax.validation.constraints.NotEmpty;
+
 public class UserDTO {
+    @NotEmpty(message = "Username cannot be empty")
     private String username;
+    @NotEmpty(message = "Password cannot be empty")
     private String password;
+    @NotEmpty(message = "Confirm Password cannot be empty")
     private String confirmPassword;
 
     public UserDTO() {
